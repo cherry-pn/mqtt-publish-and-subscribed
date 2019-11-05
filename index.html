@@ -1,0 +1,82 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>mows</title>
+</head>
+<style>
+  body{
+  background-image:url("https://media.giphy.com/media/xcykFI65yrwT6/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+}
+.container-fluid{
+  margin-top: 10%;
+  text-align: center;
+}
+.container{
+  background-color:rgba(255,105,180, 0.8);
+  height: 250px;
+}
+#tables{
+  background-color:rgba(255,105,180, 0.8);
+}
+</style>
+
+<body>
+  <div class="container-fluid">
+    <h1>MQTT</h1>
+    <p>My MQTT Web App</p>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="container">
+          <h1>connection </h1>
+          <label>Address</label><input type="text" value="ws://broker.hivemq.com:8000/mqtt" id="address"><button id="connect">Connect</button><br>
+          <br>
+          <button id="dis">disconnect</button>
+          
+          <h4 id="status">DISCONNECTED</h4>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="container">
+          <h2>publish</h2>
+          <input type="text" id="topic" placeholder="Topic"><br><br>
+          <input type="text" id="payload" placeholder="Payload"><br><br>
+          <button id="btn_publish">publish</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="container">
+          <h2>subscribe</h2>
+          
+          <input type="text" id="subscribe"><br><br>
+          <button id="btn_subscribe">subscribe</button> <br><br> <button id="btn_unsubscribe">unsubscribe</button>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="tables">
+      <h1>history</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>topic</th>
+        <th>payload</th>
+        <th>time</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script src="scripts/browserMqtt.js"></script>
+<script src="scripts/controller.js"></script>
+
+</html>
